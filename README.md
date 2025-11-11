@@ -1,6 +1,6 @@
 🎧 Playlist AI – Geração de Playlist Inteligente com base em 4 músicas
 
-Este projeto é uma aplicação web composta por Node.js (backend) e React (frontend) que permite ao usuário digitar 4 músicas e receber como resultado uma playlist com 50 músicas semelhantes.
+Este projeto é uma aplicação web composta por Node.js (backend) e React (frontend) que permite ao usuário digitar 4 músicas e receber como resultado uma playlist com músicas semelhantes.
 
 A aplicação combina:
 
@@ -25,7 +25,7 @@ Ele é responsável por processar a geração da playlist inteligente.
 
 O backend envia essas músicas para uma LLM (ex: OpenAI GPT-4o-mini ou Google Gemini).
 A IA interpreta estilo, clima, energia e contexto musical.
-Ela gera uma lista de 50 músicas semelhantes ou relacionadas tematicamente.
+Ela gera uma lista de músicas semelhantes ou relacionadas tematicamente.
 Essa geração acontece em texto (nome da faixa + artista).
 Essa etapa traz criatividade e flexibilidade:
 Pode gerar músicas com a mesma vibe, energia ou emoção
@@ -42,7 +42,7 @@ imagem da capa
 
 5. A playlist é enviada de volta ao usuário
 
-O backend devolve a lista final com até 50 músicas validadas.
+O backend devolve a lista final com as músicas validadas.
 O frontend exibe as capas, nomes, artistas e prévias para o usuário.
 
 6. Exportar para o Spotify do usuário
