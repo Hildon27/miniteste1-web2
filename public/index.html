@@ -52,6 +52,34 @@
       margin: 2rem 0;
       color: #777;
     }
+
+    .question-content {
+      padding: 1.5rem;
+      background-color: #e7e7e7;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .question {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    ol {
+      margin-left: 1.5rem;
+    }
+
+    ol li {
+      margin-bottom: 1rem;
+    }
+
+    ul.sublist {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      margin-left: 1.2rem;
+      list-style-type: disc;
+    }
   </style>
 </head>
 <body>
@@ -98,6 +126,147 @@
       <ul>
         <li><a href="https://github.com/Hildon27/miniteste1-web2#" target="_blank" style="color:#1db954;">Repositório no GitHub</a></li>
       </ul>
+    </section>
+
+    <section>
+      <h2>Questões</h2>
+
+      <div class="question-content">
+        <p class="question">
+          1. Quais são as principais funcionalidades que o sistema deve oferecer para atender às necessidades dos usuários?
+        </p>
+        <p>
+          O sistema deve oferecer funcionalidades que permitam ao usuário descobrir novas músicas com base em seu gosto musical e, opcionalmente, integrar essa playlist à sua conta do Spotify.  
+          As principais funcionalidades são:
+        </p>
+
+        <ol>
+          <li>
+            <strong>Cadastro e autenticação de usuários</strong>
+            <ul class="sublist">
+              <li>Permitir que o usuário crie ou acesse uma conta usando e-mail/senha ou login social.</li>
+              <li>Alternativamente, possibilitar login direto com Spotify.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Pesquisa de músicas em tempo real</strong>
+            <ul class="sublist">
+              <li>O usuário pode digitar o nome da música, artista ou álbum.</li>
+              <li>A aplicação consulta a API do Spotify e exibe resultados instantâneos.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Seleção das músicas preferidas</strong>
+            <ul class="sublist">
+              <li>O usuário escolhe 4 músicas de seu gosto.</li>
+              <li>O sistema envia essas músicas até o backend.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Geração de playlist personalizada</strong>
+            <ul class="sublist">
+              <li>Envia as 4 músicas escolhidas para uma IA/LLM.</li>
+              <li>A IA retorna uma playlist de músicas com perfil semelhante ou complementar.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Visualização da playlist gerada</strong>
+            <ul class="sublist">
+              <li>O usuário pode ver todas as músicas sugeridas antes de exportar.</li>
+              <li>Possibilidade de remover músicas indesejadas antes de finalizar.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Exportação para o Spotify (opcional)</strong>
+            <ul class="sublist">
+              <li>Caso o usuário conecte sua conta ao Spotify, o sistema mostra um botão para exportar a playlist para a conta pessoal.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Histórico de playlists geradas</strong>
+            <ul class="sublist">
+              <li>Usuários logados podem visualizar playlists anteriores criadas pela IA.</li>
+              <li>Podem recuperar e exportar playlists antigas.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Independência para usuários sem Spotify</strong>
+            <ul class="sublist">
+              <li>Mesmo sem login do Spotify, o usuário pode gerar playlists e visualizar resultados.</li>
+              <li>Apenas a exportação fica restrita à conta vinculada.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <div class="question-content">
+        <p class="question">
+          2. Quais características de qualidade (como desempenho, segurança, usabilidade ou escalabilidade) são importantes para o seu sistema desenvolvido?
+        </p>
+        <p>
+          O sistema proposto deve apresentar um conjunto de características de qualidade que garantam uma boa experiência ao usuário e o funcionamento confiável das integrações externas, especialmente com o Spotify e com o serviço de IA.  
+          As principais são:
+        </p>
+
+        <ol>
+          <li>
+            <strong>Usabilidade</strong>
+            <ul class="sublist">
+              <li>A interface deve ser simples, intuitiva e responsiva, facilitando a busca, seleção e geração de playlists.</li>
+              <li>O fluxo de uso — desde a inserção das músicas até a exportação da playlist — deve ser direto e agradável, mesmo para usuários sem conhecimentos técnicos.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Desempenho</strong>
+            <ul class="sublist">
+              <li>As respostas às buscas por músicas devem ser rápidas, com baixa latência nas requisições à API do Spotify.</li>
+              <li>A geração da playlist pela IA deve ocorrer em tempo razoável, evitando esperas longas que prejudiquem a experiência do usuário.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Segurança</strong>
+            <ul class="sublist">
+              <li>O sistema deve proteger os dados dos usuários, especialmente tokens de acesso obtidos pelo login via Spotify.</li>
+              <li>A autenticação deve seguir padrões OAuth 2.0, garantindo que o usuário controle quais permissões concede.</li>
+              <li>Todas as comunicações com o servidor e APIs externas devem ocorrer via HTTPS.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Escalabilidade</strong>
+            <ul class="sublist">
+              <li>A arquitetura deve suportar o aumento de usuários simultâneos sem perda significativa de desempenho.</li>
+              <li>O backend deve ser estruturado de forma modular, facilitando a adição de novas integrações (como outras plataformas musicais além do Spotify).</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Confiabilidade</strong>
+            <ul class="sublist">
+              <li>O sistema deve ser estável, mantendo o funcionamento adequado mesmo em caso de falhas temporárias nas APIs externas.</li>
+              <li>Deve haver tratamento de erros e mensagens claras ao usuário em caso de falhas na geração da playlist ou exportação.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Manutenibilidade</strong>
+            <ul class="sublist">
+              <li>O código deve seguir boas práticas de organização e documentação, facilitando futuras atualizações.</li>
+              <li>A integração com APIs e serviços externos deve ser isolada em módulos independentes, para permitir substituições ou melhorias sem impactar o restante do sistema.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
     </section>
   </main>
 
